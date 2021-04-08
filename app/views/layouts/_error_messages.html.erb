@@ -1,0 +1,14 @@
+<% if object.errors.any? %>
+  <div id="closeable-alert" class="bg-danger p-0-5-rem rounded text-white">
+    <div class="close-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-1 w-1 x-icon" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" class="x-icon" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

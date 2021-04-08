@@ -1,0 +1,36 @@
+<header class="main-menu">
+  <%= render partial: "layouts/error_messages", locals: { object: @user } %>
+  <div class="main-menu-container">
+    <div class="mx-0-5-rem">
+      <h2>Funny Movies</h2>
+    </div>
+
+    <% if current_user.present? %>
+      <div class="login-register-form">
+        <div class="p-0-5-rem mx-0-5-rem"><%= current_user.email %></div>
+        <%= link_to "Share a movie", root_path, class: "rounded btn text-white p-0-5-rem mx-0-5-rem" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "rounded btn-outline text-orange p-0-5-rem mx-0-5-rem" %>
+      </div>
+
+    <% else %>
+      <%= form_for(@user, as: :user, url: login_register_path, html: { class: "login-register-form" }) do |f| %>
+        <div class="field">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input rounded p-0-5-rem mx-0-5-rem", placeholder: 'Email...' %>
+        </div>
+
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "new-password", class: "input rounded p-0-5-rem mx-0-5-rem", placeholder: 'Password ...' %>
+        </div>
+
+        <div class="register-action">
+          <%= f.submit "Register", class: "rounded btn-outline text-orange p-0-5-rem mx-0-5-rem" %>
+        </div>
+
+        <div class="login-action">
+          <%= f.submit "Login", class: "rounded btn text-white p-0-5-rem mx-0-5-rem" %>
+        </div>
+
+      <% end %>
+    <% end %>
+  </div>
+</header>
