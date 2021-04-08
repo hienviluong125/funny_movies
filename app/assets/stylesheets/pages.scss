@@ -1,3 +1,27 @@
 .home-page-container {
   padding: 1rem;
+  padding-top: 2rem;
+  .movie-item {
+    margin-bottom: 2rem;
+    display: flex;
+    .movie-media {
+      width: 50%;
+
+      iframe {
+        width: 100%;
+        height: 300px;
+      }
+    }
+    .movie-info {
+      font-weight: 530;
+      width: 50%;
+      margin-left: 2rem;
+      h2 { margin: 0; }
+    }
+  }
+
+  .loadmore-btn {
+    font-size: 18px;
+    width: 100%;
+  }
 }

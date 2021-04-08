@@ -1,6 +1,21 @@
 class PagesController < ApplicationController
+  before_action :prepare_data, only: :home
+
   def home
     @user = User.new
+    respond_to do |format|
+      format.json do
+        html = render_to_string(
+          partial: 'movies/movie',
+          collection: @movies,
+          as: :movie,
+          layout: false,
+          formats: [:html]
+        )
+        render json: { success: true, html: html, next_page: @pagy.next, last_page: @pagy.page == @pagy.last }
+      end
+      format.html
+    end
   end
 
   def login_register
@@ -33,7 +48,13 @@ class PagesController < ApplicationController
     if @user.save
       redirect_to root_path, notice: 'Account registered successfully'
     else
+      prepare_data
       render 'home'
     end
+  end
+
+  def prepare_data
+    @movies = Movie.order(id: :desc)
+    @pagy, @movies = pagy(Movie.order(id: :desc), items: 2)
   end
 end

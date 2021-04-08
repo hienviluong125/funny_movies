@@ -1,3 +1,6 @@
-<div class="home-page-container">
-  FETCH ALL MOVIE HERE
+<div class="home-page-container" data-controller="movies" data-next-page="<%= @pagy.next %>" data-last-page="<%= @pagy.page == @pagy.last %>">
+  <div class="movies" data-target="movies.list">
+    <%= render partial: "movies/movie", collection: @movies, as: :movie %>
+  </div>
+  <button class="btn text-white rounded p-0-5-rem loadmore-btn" data-target="movies.loadmoreBtn" data-action="movies#loadmore">See more</button>
 </div>

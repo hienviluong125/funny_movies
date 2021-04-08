@@ -8,9 +8,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .brand-wrapper {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    .brand {
+      font-size: 40px;
+      font-weight: bold;
+    }
+  }
 }
 .login-register-form {
   display: flex;
+  width: 40%;
   justify-content: flex-end;
 }
 
@@ -31,6 +42,10 @@
   padding: .5rem;
 }
 
+// .disable-btn {
+//   background
+// }
+
 .btn {
   cursor: pointer;
   border: 1px solid #f69833;
@@ -40,6 +55,12 @@
   &:hover {
     background: #f58a18;
   }
+}
+
+.btn:disabled, .btn[disabled]{
+  cursor: default;
+  background: #6c757da8;
+  border: 1px solid #6c757da8;
 }
 
 .btn-outline {

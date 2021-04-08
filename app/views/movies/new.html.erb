@@ -1,0 +1,8 @@
+NEW MOVIE FORM
+
+<%= form_for(@movie, as: :movie, url: movies_path) do |f| %>
+  <div class="field">
+    <%= f.text_field :movie_url, class: "input rounded p-0-5-rem mx-0-5-rem", placeholder: 'Email...' %>
+    <%= f.submit 'OK' %>
+  </div>
+<% end %>
