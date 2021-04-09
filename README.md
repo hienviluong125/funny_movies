@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version: 2.6.6
+### Rails version: 6.0.3.6
 
-Things you may want to cover:
+### Postgres version: 12.x
 
-* Ruby version
+### Gem using:
+- Devise: for basic authentication flow
+- Pagy: pagination
+- Rspec, shoulda-matchers, simplecov, faker: for unit testing and data seeding
 
-* System dependencies
+### 3rd party using:
+- Heroku: Cloud platform
 
-* Configuration
+### Heroku production
+https://still-caverns-03836.herokuapp.com/
 
-* Database creation
+### Environment configuration
+```
+DATABASE_USERNAME=username
+DATABASE_PASSWORD=passowrd
+DATABASE_PORT=5432
+DATABASE_HOST=localhost
+YOUTUBE_API_KEY=yourkey
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Setup guide
+1. create `.env` on root directory follow `sample.env` file
+2. run `rake db:create` command to create database
+3. run `rake db:migrate` command to run migration
+4. run `rails s` command to start server
+5. run `./bin/webpack-dev-server` command to start webpack dev server ( optional )
