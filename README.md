@@ -31,3 +31,6 @@ YOUTUBE_API_KEY=yourkey
 3. run `rake db:migrate` command to run migration
 4. run `rails s` command to start server
 5. run `./bin/webpack-dev-server` command to start webpack dev server ( optional )
+
+### How to run test?
+run `rspec` command 
