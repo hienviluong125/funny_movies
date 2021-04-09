@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 
 .env
+# Ignore simple coverage folder
+coverage
+.DS_Store
