@@ -1,8 +1,17 @@
-NEW MOVIE FORM
+<div class="movie-form-wrapper">
+  <%= form_for(@movie, as: :movie, url: movies_path, html: { class: 'movie-form' }) do |f| %>
+    <div class="form-title">Share a Youtube movie</div>
 
-<%= form_for(@movie, as: :movie, url: movies_path) do |f| %>
-  <div class="field">
-    <%= f.text_field :movie_url, class: "input rounded p-0-5-rem mx-0-5-rem", placeholder: 'Email...' %>
-    <%= f.submit 'OK' %>
-  </div>
-<% end %>
+    <div class="field-wrapper text-field">
+      <%= f.text_field :movie_url, class: "input rounded p-0-5-rem", placeholder: '' %>
+    </div>
+    <% if @movie.errors.any? %>
+      <div class="error-fields">
+        <%= @movie.errors.full_messages_for(:movie_url).join(', ') %>
+      </div>
+    <% end %>
+    <div class="field-wrapper">
+      <%= f.submit 'Share', class: "btn text-white p-0-5-rem" %>
+    </div>
+  <% end %>
+</div>

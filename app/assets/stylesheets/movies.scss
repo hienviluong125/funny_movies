@@ -1,0 +1,61 @@
+
+.movie-form-wrapper {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+
+  .movie-form {
+    margin-top: 10rem;
+    width: 500px;
+    height: auto;
+    min-height: 180px;
+    border: 1px solid #ced4da;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+
+    .form-title {
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      background: white;
+      padding-left: 5px;
+      padding-right: 6px;
+    }
+
+    .error-fields {
+      text-align: left;
+      color: #dc3545;
+      margin-top: 1rem;
+    }
+
+    .field-wrapper {
+      width: 55%;
+      position: relative;
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      input[type=submit] {
+        margin-top: 1rem;
+      }
+    }
+
+    .text-field::before {
+      content: 'Youtube URL:';
+      position: absolute;
+      right: 100%;
+      width: 100px;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+
+  }
+}

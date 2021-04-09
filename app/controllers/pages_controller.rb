@@ -12,7 +12,7 @@ class PagesController < ApplicationController
           layout: false,
           formats: [:html]
         )
-        render json: { success: true, html: html, next_page: @pagy.next, last_page: @pagy.page == @pagy.last }
+        render json: { success: true, html: html, next_page: @pagy.next, last_page: @pagy.page == @pagy.last, movie_ids: @movies.pluck(:id) }
       end
       format.html
     end
@@ -55,6 +55,6 @@ class PagesController < ApplicationController
 
   def prepare_data
     @movies = Movie.order(id: :desc)
-    @pagy, @movies = pagy(Movie.order(id: :desc), items: 2)
+    @pagy, @movies = pagy(Movie.order(id: :desc), items: 5)
   end
 end

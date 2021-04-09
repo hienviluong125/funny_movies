@@ -1,6 +1,13 @@
 .home-page-container {
   padding: 1rem;
   padding-top: 2rem;
+
+  .empty-items-msg {
+    text-align: center;
+    color: #aeb2b6;
+    font-weight: 550;
+  }
+
   .movie-item {
     margin-bottom: 2rem;
     display: flex;

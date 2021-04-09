@@ -1,14 +1,14 @@
 <%- movie_url = youtube_embed(movie.movie_url) %>
-<div class="movie-item">
+<div class="movie-item" data-target="movies.movieItem" data-youtube-id="<%= movie_url %>" data-internal-id="<%= movie.id %>">
   <div class="movie-media">
     <iframe src="https://www.youtube.com/embed/<%= movie_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div class="movie-info">
-    <h2 class="text-orange">Tommy play guitar</h2>
+    <h2 class="text-orange movie-title">Tommy play guitar</h2>
     <p>Share by: <%= movie.user.email %></p>
     <p>Description: </p>
     <p>
-      <strong>
+      <strong class="movie-description">
         is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
       </strong>
     </p>
